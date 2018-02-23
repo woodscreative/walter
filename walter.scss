@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+.anim {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  background-color: black;
+}
+//
+.walter__image {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+//
+.walter__image--is-active {
+  display: block !important;
+}
