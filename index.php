@@ -48,9 +48,9 @@ data-walter-control='{"action":"stop"}'>
   <strong>Live Settings</strong>
 </p>
 <p>
-  <label for="settings-delay">Walter.config.delay</label>
-  <input id="settings-delay" type="range" min="50" max="400" value="50" id="delay">
-  <input id="settings-delay-value" type="text" value="0" style="width:50px;"> ms
+  <label for="settings-fps">Walter.config.fps</label>
+  <input id="settings-fps" type="range" min="1" max="60" value="10">
+  <input id="settings-fps-value" type="text" value="0" style="width:50px;"> fps
 </p>
 
 <?php
@@ -83,19 +83,19 @@ anim.init();
 /**
  * Live Settings
  */
-var rangeDelay = document.getElementById('settings-delay');
-var rangeDelayValue = document.getElementById('settings-delay-value');
-rangeDelay.onchange = function()
+var rangeFps = document.getElementById('settings-fps');
+var rangeFpsValue = document.getElementById('settings-fps-value');
+rangeFps.onchange = function()
 {
-  settingsUpdateDelay(this.value);
+  settingsUpdateFps(this.value);
 };
-function settingsUpdateDelay($delay)
+function settingsUpdateFps($fps)
 {
-  rangeDelay.value = $delay;
-  rangeDelayValue.value = $delay;
-  anim.config.delay = $delay; 
+  rangeFps.value = $fps;
+  rangeFpsValue.value = $fps;
+  anim.config.fps = $fps; 
 };
-settingsUpdateDelay(anim.config.delay);
+settingsUpdateFps(anim.config.fps);
 </script>
 
 </body>
