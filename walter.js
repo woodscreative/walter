@@ -10,8 +10,8 @@ function Walter($config)
   this.config = {
     // string - DOM selector 
     selector : '.walter',
-    // int - timer delay in ms 
-    delay : 100,
+    // int - frames per second 
+    fps : 10,
     // string - class applied to all frame images
     classFrameImage : 'walter__image',
     // string - class applied to only the active frame
@@ -171,7 +171,8 @@ function Walter($config)
         };
         that.start();
       },
-      this.config.delay
+      // calculate fps in ms
+      1000/this.config.fps
     );
   };
   /**
